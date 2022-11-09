@@ -1,16 +1,80 @@
 // TODO: Include packages needed for this application
 
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+const generateReadMe = ({ title, description, installation, usage, contributions, test }) =>
+    `# Title
+    ${title}
+
+    ## Description
+    ${description}
+    
+    ## Installation Instructions
+    ${installation}
+    
+    ## Usage
+    ${usage}
+    
+    ## Contributions 
+    ${contributions}
+    
+    ## Test Instructions
+    ${test}`
+
 // TODO: Create an array of questions for user input
-const questions = [];
+// const questions = [];
+
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'What is the title of your project?',
+            name: 'title',
+        },
+        {
+            type: 'input',
+            message: 'Please enter a description of your project',
+            name: 'description',
+        },
+        {
+            type: 'input',
+            message: 'Please provide installation instructions for your project',
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            message: 'Please enter usage information about your project',
+            name: 'usage',
+        },
+        {
+            type: 'input',
+            message: 'Please enter any contribution guidelines for your project',
+            name: 'contributions',
+        },
+        {
+            type: 'input',
+            message: 'Please enter test intructions for your project',
+            name: 'test',
+        }
+    ])
+    .then((answers) => {
+        const readMeMachine = generateReadMe(answers);
+        console.log(answers);
+
+        fs.writeFile('README.md', readMeMachine, (err) =>
+            err ? console.log(err) : console.log("Saved!")
+        )
+    });
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+// function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() { }
+// function init() { }
 
 // Function call to initialize app
-init();
+// init();
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for information about my application repository
