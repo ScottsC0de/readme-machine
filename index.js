@@ -4,23 +4,23 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const generateReadMe = ({ title, description, installation, usage, contributions, test }) =>
-    `# Title
-    ${title}
+    // indenting was preventing headers from working
+    `# ${title}
 
-    ## Description
-    ${description}
+## Description
+${description}
+   
+## Installation Instructions
+${installation}
     
-    ## Installation Instructions
-    ${installation}
+## Usage
+${usage}
     
-    ## Usage
-    ${usage}
+## Contributions 
+${contributions}
     
-    ## Contributions 
-    ${contributions}
-    
-    ## Test Instructions
-    ${test}`
+## Test Instructions
+${test}`
 
 // TODO: Create an array of questions for user input
 // const questions = [];
