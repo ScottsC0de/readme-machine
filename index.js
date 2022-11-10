@@ -64,8 +64,23 @@ inquirer
             name: 'usage',
         },
         {
-            type: 'input',
+            type: 'checkbox',
             message: 'Please choose a license from the following:',
+            choices: [
+                { name: 'Apache License 2.0', value: 'Apache License 2.0' },
+                { name: 'GNU General Public License v3.0', value: 'GNU General Public License v3.0' },
+                { name: 'MT License', value: 'MT License' },
+                { name: 'BSD 2-Clause "Simplied" License', value: 'BSD 2-Clause "Simplied" License' },
+                { name: 'BSD 3-Clause "New" or "Revised" License', value: 'BSD 3-Clause "New" or "Revised" License' },
+                { name: 'Boost Software License 1.0', value: 'Boost Software License 1.0' },
+                { name: 'Creative Commons Zero v1.0 Universal', value: 'Creative Commons Zero v1.0 Universal' },
+                { name: 'Eclipse Public License 2.0', value: 'Eclipse Public License 2.0' },
+                { name: 'GNU Affero General Public License v3.0', value: 'GNU Affero General Public License v3.0' },
+                { name: 'GNU General Public License v2.0', value: 'GNU General Public License v2.0' },
+                { name: 'GNU Lesser General Public License v2.1', value: 'GNU Lesser General Public License v2.1' },
+                { name: 'Mozilla Public License', value: 'Mozilla Public License' },
+                { name: 'The Unlicense', value: 'The Unlicense' }
+            ],
             name: 'license',
         },
         {
