@@ -36,7 +36,7 @@ ${test}
 
 ## <a id="questions-id"></a>Questions
 <a href="https://github.com/${github}">${github}</a>\n
-${email}`
+Send an email to **${email}** with any additional questions`
 
 // TODO: Create an array of questions for user input
 // const questions = [];
