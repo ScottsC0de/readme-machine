@@ -3,24 +3,40 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadMe = ({ title, description, installation, usage, contributions, test }) =>
+const generateReadMe = ({ title, description, installation, usage, contributing, test, license, github, email }) =>
     // indenting was preventing headers from working
     `# ${title}
 
-## Description
+## Table of Contents
+- [Description](#description-id)
+- [Installation](#installation-id)
+- [Usage](#usage-id)
+- [License](#license-id)
+- [Contributing](#contributing-id)
+- [Tests](#tests-id)
+- [Questions](#questions-id)
+
+## <a id="description-id"></a>Description
 ${description}
    
-## Installation Instructions
+## <a id="installation-id"></a>Installation
 ${installation}
     
-## Usage
+## <a id="usage-id"></a>Usage
 ${usage}
+
+## <a id="license-id"></a>License
+${license}
     
-## Contributions 
-${contributions}
+## <a id="contributing-id"></a>Contributing
+${contributing}
     
-## Test Instructions
-${test}`
+## <a id="tests-id"></a>Tests
+${test}
+
+## <a id="questions-id"></a>Questions
+${github}\n
+${email}`
 
 // TODO: Create an array of questions for user input
 // const questions = [];
@@ -49,13 +65,28 @@ inquirer
         },
         {
             type: 'input',
+            message: 'Please choose a license from the following:',
+            name: 'license',
+        },
+        {
+            type: 'input',
             message: 'Please enter any contribution guidelines for your project',
-            name: 'contributions',
+            name: 'contributing',
         },
         {
             type: 'input',
             message: 'Please enter test intructions for your project',
             name: 'test',
+        },
+        {
+            type: 'input',
+            message: 'What is your GitHub username?',
+            name: 'github',
+        },
+        {
+            type: 'input',
+            message: 'What is your email?',
+            name: 'email',
         }
     ])
     .then((answers) => {
