@@ -1,6 +1,9 @@
-# N/A
+# ReadMe Machine Prototype
+
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Table of Contents
+
 - [Description](#description-id)
 - [Installation](#installation-id)
 - [Usage](#usage-id)
@@ -10,24 +13,24 @@
 - [Questions](#questions-id)
 
 ## <a id="description-id"></a>Description
-n/a
+A professional ReadMe.md generator done from the CLI 
    
 ## <a id="installation-id"></a>Installation
-n/a
+N/A
     
 ## <a id="usage-id"></a>Usage
-n/a
+N/A
 
 ## <a id="license-id"></a>License
-n/a
+This application is covered under MIT-yellow
     
 ## <a id="contributing-id"></a>Contributing
-n/a
+N/A
     
 ## <a id="tests-id"></a>Tests
-n/a
+N/A
 
 ## <a id="questions-id"></a>Questions
-<a href="https://github.com/n/a">n/a</a>
+<a href="https://github.com/N/A">N/A</a>
 
-Send an email to **n/a** with any additional questions
+Send an email to **N/A** with any additional questions
