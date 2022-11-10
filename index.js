@@ -9,8 +9,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadMe = ({ title, description, installation, usage, contributing, test, license, github, email }) =>
-    // indenting was preventing headers from working
+const generateReadMe = ({ title, description, installation, usage, contributing, test, license, license_confirm, github, email }) =>
+    // indenting was preventing h2s from working
     `# ${title}
 
 ![License](https://img.shields.io/badge/License-${license}.svg)
@@ -35,7 +35,7 @@ ${installation}
 ${usage}
 
 ## <a id="license-id"></a>License
-This application is covered under ${license}
+This application is covered under ${license_confirm}
     
 ## <a id="contributing-id"></a>Contributing
 ${contributing}
@@ -89,6 +89,11 @@ inquirer
             ],
             name: 'license',
             // if there is no license, return an empty string
+        },
+        {
+            type: 'input',
+            message: 'Please enter your license selection to confirm',
+            name: 'license_confirm'
         },
         {
             type: 'input',
