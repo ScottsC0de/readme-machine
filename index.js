@@ -35,7 +35,7 @@ ${contributing}
 ${test}
 
 ## <a id="questions-id"></a>Questions
-${github}\n
+<a href="https://github.com/${github}">${github}</a>\n
 ${email}`
 
 // TODO: Create an array of questions for user input
