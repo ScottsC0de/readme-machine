@@ -13,24 +13,27 @@
 - [Questions](#questions-id)
 
 ## <a id="description-id"></a>Description
-A professional ReadMe.md generator done from the CLI 
+A professional ReadMe.md generator done from the CLI
    
 ## <a id="installation-id"></a>Installation
-N/A
+n/a
     
 ## <a id="usage-id"></a>Usage
-N/A
+n/a
 
 ## <a id="license-id"></a>License
-This application is covered under MIT-yellow
+This application is covered under MIT License
     
 ## <a id="contributing-id"></a>Contributing
-N/A
+n/a
     
 ## <a id="tests-id"></a>Tests
-N/A
+n/a
 
 ## <a id="questions-id"></a>Questions
-<a href="https://github.com/N/A">N/A</a>
+You can check out my repositories here on my GitHub account: 
+<a href="https://github.com/scottsc0de">scottsc0de</a>
 
-Send an email to **N/A** with any additional questions
+AND
+
+You can send an email to **n/a** with any questions!

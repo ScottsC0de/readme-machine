@@ -38,8 +38,10 @@ ${contributing}
 ${test}
 
 ## <a id="questions-id"></a>Questions
+You can check out my repositories here on my GitHub account: 
 <a href="https://github.com/${github}">${github}</a>\n
-Send an email to **${email}** with any additional questions`
+AND\n
+You can send an email to **${email}** with any questions!`
 
     inquirer
         .prompt([
@@ -85,7 +87,7 @@ Send an email to **${email}** with any additional questions`
             },
             {
                 type: 'input',
-                message: 'Please enter your license selection to confirm',
+                message: 'Please type your license selection to confirm',
                 name: 'license_confirm'
             },
             {
