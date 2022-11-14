@@ -1,6 +1,6 @@
 # ReadMe Machine
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot" width="200"/>
+<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot with daft punk helmet on" width="200"/>
 
 This ReadMe file was generated using ~~HTML~~ _Markdown_, a fun and easy-to-learn language that creates appealing ReadMe documents, and _node.js_, a way to run server-side JavaScript functions
 > Who doesn't love a good ReadMe?
@@ -27,7 +27,7 @@ n/a
 n/a
 
 ## <a id="license-id"></a>License
-This application is covered under n/a
+This application is covered under MIT License
     
 ## <a id="contributing-id"></a>Contributing
 n/a

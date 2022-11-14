@@ -7,7 +7,7 @@ function init() {
         // indenting was preventing h2s from working
         `# ${title}
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot" width="200"/>
+<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot with daft punk helmet on" width="200"/>
 
 This ReadMe file was generated using ~~HTML~~ _Markdown_, a fun and easy-to-learn language that creates appealing ReadMe documents, and _node.js_, a way to run server-side JavaScript functions
 > Who doesn't love a good ReadMe?
