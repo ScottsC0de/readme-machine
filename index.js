@@ -1,10 +1,14 @@
+// right click a file, press "Open In Integrated Terminal" to run node in VSCode
+
+// function was working without init()
 function init() {
 
+    // grab inquirer node package and grant access to filesystem
     const inquirer = require('inquirer');
     const fs = require('fs');
 
     const generateReadMe = ({ title, description, installation, usage, contributing, test, license_badge, license_name, github, email }) =>
-        // indenting was preventing h2s from working
+        // indentation was important here, was preventing h2s from working
         `# ${title}
 
 [//]: # (demonstrating some cool markdown syntax tricks)
@@ -50,7 +54,10 @@ You can check out my repositories here on my GitHub account:
 AND\n
 You can send an email to **${email}** with any questions!`
 
+    // function to run inquirer node package on the CLI (type node index)
+    // notice there is nothing written before inquirer
     inquirer
+        // where the questions come from
         .prompt([
             {
                 type: 'input',
@@ -118,6 +125,7 @@ You can send an email to **${email}** with any questions!`
                 name: 'email',
             }
         ])
+        // generate the markdown file
         .then((answers) => {
             const readMeMachine = generateReadMe(answers);
             console.log(answers);
@@ -126,6 +134,7 @@ You can send an email to **${email}** with any questions!`
                 err ? console.log(err) : console.log("Saved!")
             );
 
+            // what is this?
             // module.exports = readMeMachine;
 
         });
