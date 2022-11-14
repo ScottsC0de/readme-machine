@@ -1,4 +1,9 @@
-# ReadMe Machine Prototype
+# ReadMe Machine
+
+<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot" width="200"/>
+
+This ReadMe files was generated using ~~HTML~~ _Markdown_, a fun and easy-to-learn language that creates appealing ReadMe documents, and _node.js_, a way to run server-side JavaScript functions
+> Who doesn't love a good ReadMe?
 
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
@@ -22,7 +27,7 @@ n/a
 n/a
 
 ## <a id="license-id"></a>License
-This application is covered under MIT License
+This application is covered under n/a
     
 ## <a id="contributing-id"></a>Contributing
 n/a
@@ -36,4 +41,4 @@ You can check out my repositories here on my GitHub account:
 
 AND
 
-You can send an email to **n/a** with any questions!
+You can send an email to **Scott5902@gmail.com** with any questions!
