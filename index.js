@@ -3,7 +3,7 @@ function init() {
     const inquirer = require('inquirer');
     const fs = require('fs');
 
-    const generateReadMe = ({ title, description, installation, usage, contributing, test, license, license_confirm, github, email }) =>
+    const generateReadMe = ({ title, description, installation, usage, contributing, test, license_badge, license_name, github, email }) =>
         // indenting was preventing h2s from working
         `# ${title}
 
@@ -12,7 +12,7 @@ function init() {
 This ReadMe file was generated using ~~HTML~~ _Markdown_, a fun and easy-to-learn language that creates appealing ReadMe documents, and _node.js_, a way to run server-side JavaScript functions
 > Who doesn't love a good ReadMe?
 
-![License](https://img.shields.io/badge/License-${license}.svg)
+![License](https://img.shields.io/badge/License-${license_badge}.svg)
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ ${installation}
 ${usage}
 
 ## <a id="license-id"></a>License
-This application is covered under ${license_confirm}
+This application is covered under ${license_name}
     
 ## <a id="contributing-id"></a>Contributing
 ${contributing}
@@ -88,12 +88,12 @@ You can send an email to **${email}** with any questions!`
                     { name: 'Mozilla Public License 2.0', value: 'MPL_2.0-brightgreen' },
                     { name: 'The Unlicense', value: 'Unlicense-blue' }
                 ],
-                name: 'license',
+                name: 'license_badge',
             },
             {
                 type: 'input',
                 message: 'Please type your license selection to confirm',
-                name: 'license_confirm'
+                name: 'license_name'
             },
             {
                 type: 'input',
