@@ -13,9 +13,9 @@ function init() {
 
 ![alt text](https://img.shields.io/badge/License-${license_badge}.svg)
 
-[//]: # (demonstrating some cool markdown syntax tricks)
-
 <img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot with daft punk helmet on" width="200"/>
+
+[//]: # (demonstrating some cool markdown syntax tricks)
 
 This ReadMe file was generated using:
 - **Markdown**, a fun and easy-to-learn language that creates appealing ReadMe documents
