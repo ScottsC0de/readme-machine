@@ -2,9 +2,9 @@
 
 ![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-[//]: # (demonstrating some cool markdown syntax tricks)
-
 <img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot with daft punk helmet on" width="200"/>
+
+[//]: # (demonstrating some cool markdown syntax tricks. this is a markdown comment)
 
 This ReadMe file was generated using:
 - **Markdown**, a fun and easy-to-learn language that creates appealing ReadMe documents
@@ -22,7 +22,7 @@ This ReadMe file was generated using:
 - [Questions](#questions-id)
 
 ## <a id="description-id"></a>Description
-A professional ReadMe.md generator done from the CLI
+a professional ReadMe.md generator run from the CLI
    
 ## <a id="installation-id"></a>Installation
 n/a
@@ -31,7 +31,7 @@ n/a
 n/a
 
 ## <a id="license-id"></a>License
-This application is covered under MIT License
+This application is covered under **MIT License**
     
 ## <a id="contributing-id"></a>Contributing
 n/a

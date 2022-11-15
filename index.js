@@ -1,21 +1,43 @@
 // right click a file, press "Open In Integrated Terminal" to run node in VSCode
 
-// function was working without init()
-function init() {
+// license name array, to post license badge icon and license name into License section on ReadMe 
+const licenseNames = [
+    { name: 'Apache License 2.0', value: 'Apache_2.0-blue' },
+    { name: 'GNU General Public License v3.0', value: 'GPLv3-blue' },
+    { name: 'MIT License', value: 'MIT-yellow' },
+    { name: 'BSD 2-Clause "Simplified" License', value: 'BSD_2--Clause-orange' },
+    { name: 'BSD 3-Clause "New" or "Revised" License', value: 'BSD_3--Clause-blue' },
+    { name: 'Boost Software License 1.0', value: 'Boost_1.0-lightblue' },
+    { name: 'Creative Commons Zero v1.0 Universal', value: 'CC0_1.0-lightgrey' },
+    { name: 'Eclipse Public License 2.0', value: 'EPL_1.0-red' },
+    { name: 'GNU Affero General Public License v3.0', value: 'AGPL_v3-blue' },
+    { name: 'GNU General Public License v2.0', value: 'GPL_v2-blue' },
+    { name: 'GNU Lesser General Public License v3.0', value: 'LGPL_v3-blue' },
+    { name: 'Mozilla Public License 2.0', value: 'MPL_2.0-brightgreen' },
+    { name: 'The Unlicense', value: 'Unlicense-blue' }
+];
 
-    // grab inquirer node package and grant access to filesystem
-    const inquirer = require('inquirer');
-    const fs = require('fs');
+// grab inquirer node package and grant access to filesystem
+const inquirer = require('inquirer');
+const fs = require('fs');
 
-    const generateReadMe = ({ title, description, installation, usage, contributing, test, license_badge, license_name, github, email }) =>
-        // indentation was important here, was preventing h2s from working
-        `# ${title}
+// function to post license name rather than license value
+const getLicenseName = (licenseKey) => {
+    const match = licenseNames.filter((licenseObject) => licenseObject.value === licenseKey)
+    const { name } = match[0];
+    return name;
+}
 
-![alt text](https://img.shields.io/badge/License-${license_badge}.svg)
+// function for generating ReadMe file
+const generateReadMe = ({ title, description, installation, usage, contributing, test, license, github, email }) =>
+    // indentation was important here, was preventing h2s from working
+    `# ${title}
+
+![alt text](https://img.shields.io/badge/License-${license}.svg)
 
 <img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot with daft punk helmet on" width="200"/>
 
-[//]: # (demonstrating some cool markdown syntax tricks)
+[//]: # (demonstrating some cool markdown syntax tricks. this is a markdown comment)
 
 This ReadMe file was generated using:
 - **Markdown**, a fun and easy-to-learn language that creates appealing ReadMe documents
@@ -42,7 +64,7 @@ ${installation}
 ${usage}
 
 ## <a id="license-id"></a>License
-This application is covered under ${license_name}
+This application is covered under **${getLicenseName(license)}**
     
 ## <a id="contributing-id"></a>Contributing
 ${contributing}
@@ -56,108 +78,67 @@ You can check out my repositories here on my GitHub account:
 AND\n
 You can send an email to **${email}** with any questions!`
 
-    // function to run inquirer node package on the CLI (type node index)
-    // notice there is nothing written before inquirer
-    inquirer
-        // where the questions come from
-        .prompt([
-            {
-                type: 'input',
-                message: 'What is the title of your project?',
-                name: 'title',
-            },
-            {
-                type: 'input',
-                message: 'Please enter a description of your project',
-                name: 'description',
-            },
-            {
-                type: 'input',
-                message: 'Please provide installation instructions for your project',
-                name: 'installation',
-            },
-            {
-                type: 'input',
-                message: 'Please enter usage information about your project',
-                name: 'usage',
-            },
-            {
-                type: 'list',
-                message: 'Please choose a license from the following:',
-                choices: [
-                    { name: 'Apache License 2.0', value: 'Apache_2.0-blue' },
-                    { name: 'GNU General Public License v3.0', value: 'GPLv3-blue' },
-                    { name: 'MIT License', value: 'MIT-yellow' },
-                    { name: 'BSD 2-Clause "Simplified" License', value: 'BSD_2--Clause-orange' },
-                    { name: 'BSD 3-Clause "New" or "Revised" License', value: 'BSD_3--Clause-blue' },
-                    { name: 'Boost Software License 1.0', value: 'Boost_1.0-lightblue' },
-                    { name: 'Creative Commons Zero v1.0 Universal', value: 'CC0_1.0-lightgrey' },
-                    { name: 'Eclipse Public License 2.0', value: 'EPL_1.0-red' },
-                    { name: 'GNU Affero General Public License v3.0', value: 'AGPL_v3-blue' },
-                    { name: 'GNU General Public License v2.0', value: 'GPL_v2-blue' },
-                    { name: 'GNU Lesser General Public License v3.0', value: 'LGPL_v3-blue' },
-                    { name: 'Mozilla Public License 2.0', value: 'MPL_2.0-brightgreen' },
-                    { name: 'The Unlicense', value: 'Unlicense-blue' }
-                ],
-                name: 'license_badge',
-            },
-            {
-                type: 'input',
-                message: 'Please type your license selection to confirm',
-                name: 'license_name',
-                // type: 'list',
-                // message: 'Please confirm your license selection',
-                // choices: [
-                //     { name: 'Apache License 2.0', value: 'Apache License 2.0' },
-                //     { name: 'GNU General Public License v3.0', value: 'GNU General Public License v3.0' },
-                //     { name: 'MIT License', value: 'MIT License' },
-                //     { name: 'BSD 2-Clause "Simplified" License', value: 'BSD 2-Clause "Simplified" License' },
-                //     { name: 'BSD 3-Clause "New" or "Revised" License', value: 'BSD 3-Clause "New" or "Revised" License' },
-                //     { name: 'Boost Software License 1.0', value: 'Boost Software License 1.0' },
-                //     { name: 'Creative Commons Zero v1.0 Universal', value: 'Creative Commons Zero v1.0 Universal' },
-                //     { name: 'Eclipse Public License 2.0', value: 'Eclipse Public License 2.0' },
-                //     { name: 'GNU Affero General Public License v3.0', value: 'GNU Affero General Public License v3.0' },
-                //     { name: 'GNU General Public License v2.0', value: 'GNU General Public License v2.0' },
-                //     { name: 'GNU Lesser General Public License v3.0', value: 'GNU Lesser General Public License v3.0' },
-                //     { name: 'Mozilla Public License 2.0', value: 'Mozilla Public License 2.0' },
-                //     { name: 'The Unlicense', value: 'The Unlicense' }
-                // ],
-                // name: 'license_name',
-            },
-            {
-                type: 'input',
-                message: 'Please enter any contribution guidelines for your project',
-                name: 'contributing',
-            },
-            {
-                type: 'input',
-                message: 'Please enter test intructions for your project',
-                name: 'test',
-            },
-            {
-                type: 'input',
-                message: 'What is your GitHub username?',
-                name: 'github',
-            },
-            {
-                type: 'input',
-                message: 'What is your email?',
-                name: 'email',
-            }
-        ])
-        // generate the markdown file
-        .then((answers) => {
-            const readMeMachine = generateReadMe(answers);
-            console.log(answers);
+// function to run inquirer node package on the CLI (type node index.js)
+// notice there is nothing written before inquirer
+inquirer
+    // where the questions come from
+    .prompt([
+        {
+            type: 'input',
+            message: 'What is the title of your project?',
+            name: 'title',
+        },
+        {
+            type: 'input',
+            message: 'Please enter a description of your project',
+            name: 'description',
+        },
+        {
+            type: 'input',
+            message: 'Please provide installation instructions for your project',
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            message: 'Please enter usage information about your project',
+            name: 'usage',
+        },
+        {
+            type: 'list',
+            message: 'Please choose a license from the following:',
+            choices: licenseNames,
+            name: 'license',
+        },
+        {
+            type: 'input',
+            message: 'Please enter any contribution guidelines for your project',
+            name: 'contributing',
+        },
+        {
+            type: 'input',
+            message: 'Please enter test intructions for your project',
+            name: 'test',
+        },
+        {
+            type: 'input',
+            message: 'What is your GitHub username?',
+            name: 'github',
+        },
+        {
+            type: 'input',
+            message: 'What is your email?',
+            name: 'email',
+        }
+    ])
+    // generate the markdown file
+    .then((answers) => {
+        const readMeMachine = generateReadMe(answers);
+        console.log(answers);
 
-            fs.writeFile('README.md', readMeMachine, (err) =>
-                err ? console.log(err) : console.log("Saved!")
-            );
+        // let the user know if it worked
+        fs.writeFile('README.md', readMeMachine, (err) =>
+            err ? console.log(err) : console.log("Saved!")
+        );
+    });
 
-            // what will this do here?
-            // module.exports = readMeMachine;
 
-        });
-};
-
-init();
