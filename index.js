@@ -137,7 +137,7 @@ inquirer
 
         // let the user know if it worked
         fs.writeFile('README.md', readMeMachine, (err) =>
-            err ? console.log(err) : console.log("Saved!")
+            err ? console.log(err) : console.log("Success! Click on your new ReadMe file and Open Preview!")
         );
     });
 
