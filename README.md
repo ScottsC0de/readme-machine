@@ -1,13 +1,15 @@
 # ReadMe Machine
 
+![alt text](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 [//]: # (demonstrating some cool markdown syntax tricks)
 
 <img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" alt="github mascot with daft punk helmet on" width="200"/>
 
-This ReadMe file was generated using ~~HTML~~ _Markdown_, a fun and easy-to-learn language that creates appealing ReadMe documents, and _node.js_, a way to run server-side JavaScript functions
-> Who doesn't love a good ReadMe?&nbsp;
-
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+This ReadMe file was generated using:
+- **Markdown**, a fun and easy-to-learn language that creates appealing ReadMe documents
+- **node.js**, a way to run server-side JavaScript functions
+> Who doesn't ~~like~~ _love_ a good ReadMe?&nbsp;
 
 ## 💡 Table of Contents
 
