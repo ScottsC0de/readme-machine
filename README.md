@@ -35,10 +35,10 @@ Full visual demonstration: https://youtu.be/eNjHm8k3z60
 ## <a id="license-id"></a>License
 This application is covered under **MIT License**
     
-## <a id="contributing-id"></a>Contribution Guidelines
+## <a id="contributing-id"></a>Contributing
 n/a
     
-## <a id="tests-id"></a>Test Instructions
+## <a id="tests-id"></a>Tests
 Run node index.js to test the app’s functionality (see ‘Usage’ section for help)
 
 ## <a id="questions-id"></a>Questions
